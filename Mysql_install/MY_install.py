@@ -91,8 +91,9 @@ def set_data():  #检查提供的数据目录
 
 def set_path():     # 配置好环境变量
     print "[INFO] 正在配置环境变量..."
+    exportname = 'export PATH=$PATH:'+install_path+'/mysql/bin'
     path_profile = open("/root/.bash_profile","a")
-    path_profile.write("export PATH=$PATH:/usr/local/mysql/bin")
+    path_profile.write(exportname)
     path_profile.close()
     cmd_source = "source /root/.bash_profile"
     sou_int = os.system(cmd_source)
